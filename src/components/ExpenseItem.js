@@ -11,16 +11,21 @@ const ExpenseItem = (props) => {
             cost: props.cost,
         };
 
+        console.log(item);
+
+
         dispatch({
             type: 'DELETE_EXPENSE',
             payload: item,
         });
     };
 
-    const handleAddTen = () => {
+    const handleAdd = () => {
         const item = {
             name: props.name,
+            cost: 10,
         };
+        console.log(item);
 
         dispatch({
             type: 'ADD_EXPENSE',
@@ -28,9 +33,10 @@ const ExpenseItem = (props) => {
         });
     };
 
-    const handleRemoveTen = () => {
+    const handleRemove = () => {
         const item = {
             name: props.name,
+            cost: 10,
         };
 
         dispatch({
@@ -43,9 +49,9 @@ const ExpenseItem = (props) => {
         <tr>
             <td>{props.name}</td>
             <td>{Currency}{props.cost}</td>
-            <td><FaPlusCircle size='2.2em' color='green' onclick={handleAddTen}></FaPlusCircle></td>
-            <td><FaMinusCircle size='2.2em' color='blue' onclick={handleRemoveTen}></FaMinusCircle></td>
-            <td><FaTimesCircle type='button' size='2.2em' color='red' onclick={handleDeleteItem}></FaTimesCircle></td>
+            <td><FaPlusCircle type='button' size='2.2em' color='green' onClick={handleAdd}></FaPlusCircle></td>
+            <td><FaMinusCircle type='button' size='2.2em' color='blue' onClick={handleRemove}></FaMinusCircle></td>
+            <td><FaTimesCircle type='button' size='2.2em' color='red' onClick={handleDeleteItem}></FaTimesCircle></td>
         </tr>
     )
 };

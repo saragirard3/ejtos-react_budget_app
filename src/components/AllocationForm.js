@@ -12,10 +12,12 @@ const AllocationForm = () => {
     const submitEvent = () => {
 
         const item = {
-            department: department,
+            name: department,
             cost: parseInt(cost),
         };
     
+        console.log(item);
+
         if(allocation === "Add") {
             dispatch({
                 type: 'ADD_QUANTITY',
@@ -39,11 +41,10 @@ const AllocationForm = () => {
                     <label className="input-group-text" htmlFor="inputGroupSelect01">Departments</label>
                 </div>
                   <select className="custom-select" id="inputGroupSelect01" onChange={(event) => setDepartment(event.target.value)}>
-                        <option defaultValue>Choose...</option>
-                        <option value="Marketing" name="Marketing"> Marketing</option>
+                        <option defaultValue value="Marketing" name="Marketing">Marketing</option>
                         <option value="Finance" name="Finance">Finance</option>
                         <option value="Sales" name="Sales">Sales</option>
-                        <option value="Human Resources" name="Human Resources">Human Resources</option>
+                        <option value="Human Resource" name="Human Resource">Human Resources</option>
                         <option value="IT" name="IT">IT</option>
                   </select>
     
@@ -51,7 +52,8 @@ const AllocationForm = () => {
                     <label className="input-group-text" htmlFor="inputGroupSelect02">Allocation</label>
                 </div>
                   <select className="custom-select" id="inputGroupSelect02" onChange={(event) => setAllocation(event.target.value)}>
-                    <option defaultValue value="Add" name="Add">Add</option>
+                    <option defaultValue name="Choose one..."></option>
+                    <option value="Add" name="Add">Add</option>
                     <option value="Reduce" name="Reduce">Reduce</option>
                   </select>  
                   <span className="eco" style={{ marginLeft: '2rem', marginRight: '8px'}}>{currency} </span>
