@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const AllocationForm = () => {
-    const { dispatch } = useContext(AppContext);
+    const { dispatch, currency } = useContext(AppContext);
 
     const [department, setDepartment] = useState('');
     const [allocation, setAllocation] = useState('');
@@ -55,8 +55,8 @@ const AllocationForm = () => {
                     <option defaultValue value="Add" name="Add">Add</option>
                     <option value="Reduce" name="Reduce">Reduce</option>
                   </select>  
-                  <span className="eco" style={{ marginLeft: '2rem', marginRight: '8px'}}></span>
-    
+                  <span className="eco" style={{ marginLeft: '2rem', marginRight: '8px'}}>{currency} </span>
+                    
                     <input
                         required='required'
                         type='number'
