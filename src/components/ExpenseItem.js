@@ -3,7 +3,7 @@ import { AppContext } from '../context/AppContext';
 import { FaTimesCircle, FaPlusCircle, FaMinusCircle  } from 'react-icons/fa';
 
 const ExpenseItem = (props) => {
-    const { dispatch, add, minus, Currency } = useContext(AppContext);
+    const { dispatch, Currency } = useContext(AppContext);
 
     const handleDeleteItem = () => {
         const item = {
@@ -21,7 +21,7 @@ const ExpenseItem = (props) => {
             name: props.name,
         };
 
-        add({
+        dispatch({
             type: 'ADD_EXPENSE',
             payload: item,
         });
@@ -32,7 +32,7 @@ const ExpenseItem = (props) => {
             name: props.name,
         };
 
-        minus({
+        dispatch({
             type: 'RED_EXPENSE',
             payload: item,
         });
@@ -41,7 +41,7 @@ const ExpenseItem = (props) => {
     return (
         <tr>
             <td>{props.name}</td>
-            <td>{Currency}{props.quantity}</td>
+            <td>{Currency}{props.cost}</td>
             <td><FaPlusCircle size='2.2em' color='green' onclick={handleAddTen}></FaPlusCircle></td>
             <td><FaMinusCircle size='2.2em' color='blue' onclick={handleRemoveTen}></FaMinusCircle></td>
             <td><FaTimesCircle size='2.2em' color='red' onclick={handleDeleteItem}></FaTimesCircle></td>

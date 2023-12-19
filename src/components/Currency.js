@@ -10,8 +10,7 @@ const Currency = () => {
                 payload: val,
             })
     }
-    
-
+  
   return (
       <div className='alert alert-secondary'> Currency {
         <select name="Currency" id="Currency" onChange={event=>changeCurrency(event.target.value)}>
