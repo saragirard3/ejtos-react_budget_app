@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 const AllocationForm = () => {
@@ -17,14 +16,14 @@ const AllocationForm = () => {
             cost: parseInt(cost),
         };
     
-        if(allocation === "Reduce") {
+        if(allocation === "Add") {
             dispatch({
-                type: 'RED_QUANTITY',
+                type: 'ADD_QUANTITY',
                 payload: item,
             });
         } else {
                 dispatch({
-                    type: 'ADD_QUANTITY',
+                    type: 'RED_QUANTITY',
                     payload: item,
                 });
             }

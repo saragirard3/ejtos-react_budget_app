@@ -8,6 +8,7 @@ const ExpenseItem = (props) => {
     const handleDeleteItem = () => {
         const item = {
             name: props.name,
+            cost: props.cost,
         };
 
         dispatch({
@@ -44,7 +45,7 @@ const ExpenseItem = (props) => {
             <td>{Currency}{props.cost}</td>
             <td><FaPlusCircle size='2.2em' color='green' onclick={handleAddTen}></FaPlusCircle></td>
             <td><FaMinusCircle size='2.2em' color='blue' onclick={handleRemoveTen}></FaMinusCircle></td>
-            <td><FaTimesCircle size='2.2em' color='red' onclick={handleDeleteItem}></FaTimesCircle></td>
+            <td><FaTimesCircle type='button' size='2.2em' color='red' onclick={handleDeleteItem}></FaTimesCircle></td>
         </tr>
     )
 };

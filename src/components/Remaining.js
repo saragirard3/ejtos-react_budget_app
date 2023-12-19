@@ -9,7 +9,7 @@ const Remaining = () => {
     const remaining = budget - totalExpenses;
 
     return (
-        <div className='alert alert-primary'>
+        <div className='alert alert-warning'>
             <span>Remaining: {currency}{remaining}</span>
         </div>
     );
