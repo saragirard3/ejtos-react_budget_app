@@ -21,11 +21,13 @@ export const AppReducer = (state, action) => {
                     }
                     return currentExp
                 });
+                alert("The value cannot exceed remaining funds: $30");
                 return {
                     ...state,
                 };
             } else {
-                alert("Cannot increase the allocation! Out of funds");
+                // alert("Cannot increase the allocation! Out of funds");
+                alert("You cannot reduce the budget lower than the spending");
                 return {
                     ...state
                 }
